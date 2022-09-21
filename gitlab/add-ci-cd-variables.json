@@ -7,7 +7,7 @@
 	"item": [
 		{
 			"name": "Add CI/CD variable",
-			"_postman_id": "40ee1ef4-0adc-4050-9c18-ee15fae3c43a",
+			"id": "40ee1ef4-0adc-4050-9c18-ee15fae3c43a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -34,10 +34,7 @@
 							"value": "{{VARIABLE_VALUE}}",
 							"type": "text"
 						}
-					],
-					"options": {
-						"formdata": {}
-					}
+					]
 				},
 				"url": "{{GITLAB_API_URL}}/projects/{{PROJECT_ID_URI_ENCODED}}/variables"
 			},
@@ -55,9 +52,10 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f7d13e90-e47d-4ae6-ab68-460ca919838e",
+				"id": "e913c6e5-324c-40f3-90b8-b3de5a84c46b",
 				"type": "text/javascript",
 				"exec": [
+					"// Récupération de l'identifiant du projet à partir de l'itération",
 					"var projectId = pm.iterationData.get(\"PROJECT_ID\");",
 					"",
 					"if (projectId === undefined) {",
@@ -86,7 +84,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7c2fc0e9-4f2b-4cfd-b683-8d8ffff0cbcb",
+				"id": "1072f582-2f11-4a0c-9cbd-0078afe8763e",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -96,28 +94,24 @@
 	],
 	"variable": [
 		{
-			"id": "66a2a133-12e5-440a-b683-d0d397f659c9",
+			"id": "e649fe49-235a-4575-8398-3634446fc47e",
 			"key": "PROJECT_ID",
-			"value": "cavernon/services.web",
-			"type": "string"
+			"value": "cavernon/services.web"
 		},
 		{
-			"id": "f82041e5-a819-4619-ac1e-715b2c95416e",
+			"id": "6d0d8a3e-1c2a-42ca-af19-5e941d8fbb84",
 			"key": "PROJECT_ID_URI_ENCODED",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "899185c4-babd-4097-9125-96cea6044fb5",
+			"id": "08739bea-6de9-45f3-b773-e6a60db00ce5",
 			"key": "VARIABLE_NAME",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "5d4edec7-ad89-46b9-a934-b3d69cc769bb",
+			"id": "9b0b0e5c-7c17-48b4-ad5b-cdc74c2f31f9",
 			"key": "VARIABLE_VALUE",
-			"value": "",
-			"type": "string"
+			"value": ""
 		}
 	]
 }
