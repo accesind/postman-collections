@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "0d30de8e-26d1-4975-9b81-74726ed7d9a5",
+		"name": "GitLab - Add CI/CD variables",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add CI/CD variable",
+			"_postman_id": "40ee1ef4-0adc-4050-9c18-ee15fae3c43a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "key",
+							"value": "{{VARIABLE_NAME}}",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "{{VARIABLE_VALUE}}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": "{{GITLAB_API_URL}}/projects/{{PROJECT_ID_URI_ENCODED}}/variables"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "{{GITLAB_PRIVATE_TOKEN}}",
+			"key": "PRIVATE-TOKEN"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f7d13e90-e47d-4ae6-ab68-460ca919838e",
+				"type": "text/javascript",
+				"exec": [
+					"var projectId = pm.iterationData.get(\"PROJECT_ID\");",
+					"",
+					"if (projectId === undefined) {",
+					"    projectId = pm.collectionVariables.get(\"PROJECT_ID\");",
+					"}",
+					"",
+					"if (projectId !== undefined) {",
+					"    pm.collectionVariables.set(\"PROJECT_ID_URI_ENCODED\", encodeURIComponent(projectId));",
+					"}",
+					"",
+					"var key = pm.iterationData.get(\"VARIABLE_NAME\");",
+					"",
+					"if (key !== undefined) {",
+					"    pm.collectionVariables.set(\"VARIABLE_NAME\", key);",
+					"}",
+					"",
+					"var value = pm.iterationData.get(\"VARIABLE_VALUE\");",
+					"",
+					"if (value !== undefined) {",
+					"    pm.collectionVariables.set(\"VARIABLE_VALUE\", value);",
+					"}",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7c2fc0e9-4f2b-4cfd-b683-8d8ffff0cbcb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "66a2a133-12e5-440a-b683-d0d397f659c9",
+			"key": "PROJECT_ID",
+			"value": "cavernon/services.web",
+			"type": "string"
+		},
+		{
+			"id": "f82041e5-a819-4619-ac1e-715b2c95416e",
+			"key": "PROJECT_ID_URI_ENCODED",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "899185c4-babd-4097-9125-96cea6044fb5",
+			"key": "VARIABLE_NAME",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "5d4edec7-ad89-46b9-a934-b3d69cc769bb",
+			"key": "VARIABLE_VALUE",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
