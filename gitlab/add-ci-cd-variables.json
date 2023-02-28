@@ -52,7 +52,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "eea9e14e-736b-483e-a50b-f0059c9a914a",
+				"id": "3cd1af86-2892-4728-bde3-f4d40c603a25",
 				"type": "text/javascript",
 				"exec": [
 					"// Récupération de l'identifiant du projet à partir de l'itération",
@@ -84,7 +84,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "74d52ba1-fd33-45cb-a681-9ee771010b99",
+				"id": "03f1ddb9-d51a-4093-b430-668c0ba4a144",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -94,22 +94,22 @@
 	],
 	"variable": [
 		{
-			"id": "56bad1bd-9c70-40a5-bea5-ca9dfd53bc33",
+			"id": "fa14f3e5-3d13-4787-a6ce-98772aa22fc6",
 			"key": "PROJECT_ID",
 			"value": "cavernon/subtree-use"
 		},
 		{
-			"id": "cc49afab-edbb-4caa-b9a9-033307335f6f",
+			"id": "5cf56f56-10f4-47e8-a8f6-5c1ffbebfa09",
 			"key": "PROJECT_ID_URI_ENCODED",
 			"value": ""
 		},
 		{
-			"id": "cc7c9a9a-4780-421d-afc3-c10e26b06883",
+			"id": "508cc7c7-98d2-4431-8627-884e67ba3fa4",
 			"key": "VARIABLE_NAME",
 			"value": ""
 		},
 		{
-			"id": "02ee356f-36c6-4777-b3cb-cd51a6cd1d45",
+			"id": "e7887a29-b910-4622-9919-b644d197e5c5",
 			"key": "VARIABLE_VALUE",
 			"value": ""
 		}
